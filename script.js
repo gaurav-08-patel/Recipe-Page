@@ -103,13 +103,13 @@ SCRIPT FOR FAVOURITE PAGE
 */
 
 let divOffavouriteFood = document.querySelector(".favourite-foods");
+let msgForEmptyFavourite = document.querySelector(".msg-for-empty-favourite");
 
 if(divOffavouriteFood !== null){
 
     if(favourite.length === 0){
 
-    
-        divOffavouriteFood.innerHTML = `
+        msgForEmptyFavourite.innerHTML = `
         <div class="empty-favourite">
             <h3> No  Foods in Favourite </h3>
             <a href="index.html"><button>Back to home </button>
@@ -157,6 +157,9 @@ function filterFoods(){
 
     divOfCategoriesItems.forEach((img)=>{
        img.addEventListener("click",async (e)=>{
+            if(msgForEmptyFavourite !== null){
+                msgForEmptyFavourite.innerHTML="";
+            }
             if(divOfRandomMeals !== null){
                 divOfRandomMeals.innerHTML="";
             }

@@ -16,9 +16,12 @@ async function recipeCard() {
 
   for(let a=1 ; a<=20 ; a++){
     
-    if( data[`strMeasure${a}`] !== " ") {
-        string = data[`strMeasure${a}`]+" "+ data[`strIngredient${a}`];
-        // console.log(string);
+    if(data[`strMeasure${a}`] !== " ") {
+        // if(data[`strMeasure${a}`] !== ""){
+            string = data[`strMeasure${a}`]+" "+ data[`strIngredient${a}`];
+        // }
+        
+        
         strIngredient = strIngredient + ", " + string;
         
         strInstructions = data["strInstructions"];
@@ -51,7 +54,7 @@ async function recipeCard() {
         `;
 
 
-       console.log(a,data[`strMeasure${a}`]) 
+    //    console.log(a,data[`strMeasure${a}`]) 
     //    a++; 
     }
     else{
